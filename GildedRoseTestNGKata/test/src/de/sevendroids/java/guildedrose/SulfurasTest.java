@@ -1,4 +1,4 @@
-package de.sevendroids.java.guildedrose.testng;
+package de.sevendroids.java.guildedrose;
 
 import static org.testng.Assert.assertEquals;
 

@@ -1,4 +1,4 @@
-package de.sevendroids.java.guildedrose.testng;
+package de.sevendroids.java.guildedrose;
 
 import de.sevendroids.java.guildedrose.GildedRose;
 import de.sevendroids.java.guildedrose.Item;
