@@ -8,9 +8,9 @@ public class AgedBrieItemTest {
 
     private static final String AGED_BRIE = "Aged Brie";
     private static final int SELLIN_ZERO = 0;
-    private static final int QUALITY_MEDIUM = 30;
     private static final int SELLIN_POSITIVE = 1;
     private static final int SELLIN_NEGATIVE = -1;
+    private static final int QUALITY_MEDIUM = 30;
     private static final int QUALITY_MAXIMUM = 50;
 
     @Test
