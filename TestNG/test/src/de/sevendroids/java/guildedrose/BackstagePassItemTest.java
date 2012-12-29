@@ -6,7 +6,7 @@ import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 @Test(groups = "Unit")
-public class BackstagePassTest extends GildedRoseTest {
+public class BackstagePassItemTest extends GildedRoseTest {
 
     @Test(dataProvider = "createItemWithQuality49")
     public final void qualityShouldNotIncreaseOver50(String testCaseDesc,

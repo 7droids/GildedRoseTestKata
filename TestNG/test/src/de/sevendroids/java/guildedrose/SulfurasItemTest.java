@@ -6,7 +6,7 @@ import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 @Test(groups = "Unit")
-public class SulfurasTest extends GildedRoseTest {
+public class SulfurasItemTest extends GildedRoseTest {
     public final void qualityShouldNotIncreaseOver50() {
 	Item sulfuras = createItem(SELLIN_POSITIVE, QUALITY_MAXIMUM);
 	updateQuality(sulfuras);

@@ -13,7 +13,7 @@ import org.testng.annotations.Test;
  * 
  */
 @Test(groups = "Unit")
-public class AgedBrieTest extends GildedRoseTest {
+public class AgedBrieItemTest extends GildedRoseTest {
 
     public final void qualityShouldNotIncreaseOver50() {
 	Item agedBrie = createItem(SELLIN_POSITIVE, QUALITY_MAXIMUM);
