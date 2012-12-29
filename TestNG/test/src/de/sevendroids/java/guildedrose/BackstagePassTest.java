@@ -5,8 +5,6 @@ import static org.testng.Assert.assertEquals;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
-import de.sevendroids.java.guildedrose.Item;
-
 @Test(groups = "Unit")
 public class BackstagePassTest extends GildedRoseTest {
 
@@ -14,7 +12,7 @@ public class BackstagePassTest extends GildedRoseTest {
     public final void qualityShouldNotIncreaseOver50(String testCaseDesc,
 	    Item sulfuras) {
 	updateQuality(sulfuras);
-	assertEquals(sulfuras.quality, 50, testCaseDesc);
+	assertEquals(sulfuras.quality, QUALITY_MAXIMUM, testCaseDesc);
     }
 
     @DataProvider(name = "createItemWithQuality49")
@@ -50,9 +48,9 @@ public class BackstagePassTest extends GildedRoseTest {
     }
 
     public final void qualityShouldBe0ForSellIn0() {
-	Item sulfuras = createItem(0, 49);
+	Item sulfuras = createItem(SELLIN_ZERO, 49);
 	updateQuality(sulfuras);
-	assertEquals(sulfuras.quality, 0);
+	assertEquals(sulfuras.quality, SELLIN_ZERO);
     }
 
     @Override

@@ -8,8 +8,6 @@ import static org.testng.Assert.assertEquals;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
-import de.sevendroids.java.guildedrose.Item;
-
 /**
  * @author 7droids.de (FA)
  * 
@@ -18,10 +16,9 @@ import de.sevendroids.java.guildedrose.Item;
 public class AgedBrieTest extends GildedRoseTest {
 
     public final void qualityShouldNotIncreaseOver50() {
-	int quality = 50;
-	Item agedBrie = createItem(1, quality);
+	Item agedBrie = createItem(SELLIN_POSITIVE, QUALITY_MAXIMUM);
 	updateQuality(agedBrie);
-	assertEquals(agedBrie.quality, quality);
+	assertEquals(agedBrie.quality, QUALITY_MAXIMUM);
     }
 
     @Test(dataProvider = "createItemToIncrease")
@@ -34,13 +31,14 @@ public class AgedBrieTest extends GildedRoseTest {
 
     @DataProvider(name = "createItemToIncrease")
     protected final Object[][] createItemToIncrease() {
-	return new Object[][] { { "sellIn < 0", createItem(-1, 49) },
-		{ "sellIn = 0", createItem(0, 49) },
-		{ "sellIn > 0", createItem(1, 49) }, };
+	return new Object[][] {
+		{ "sellIn < 0", createItem(SELLIN_NEGATIVE, 49) },
+		{ "sellIn = 0", createItem(SELLIN_ZERO, 49) },
+		{ "sellIn > 0", createItem(SELLIN_POSITIVE, 49) }, };
     }
 
     public final void qualityShouldIncreaseByTwoIfSellInLT0() {
-	Item agedBrie = createItem(-1, 47);
+	Item agedBrie = createItem(SELLIN_NEGATIVE, 47);
 	updateQuality(agedBrie);
 	assertEquals(agedBrie.quality, 49);
     }
@@ -54,19 +52,19 @@ public class AgedBrieTest extends GildedRoseTest {
     public final void qualityShouldNeverBeNegative() {
 	Item agedBrie = createItem(-2, 1);
 	updateQuality(agedBrie);
-	assertEquals(agedBrie.quality, 0);
+	assertEquals(agedBrie.quality, SELLIN_ZERO);
     }
 
     public final void sellInShouldDecreaseByOne() {
-	Item agedBrie = createItem(1, 49);
+	Item agedBrie = createItem(SELLIN_POSITIVE, 49);
 	updateQuality(agedBrie);
-	assertEquals(agedBrie.sellIn, 0);
+	assertEquals(agedBrie.sellIn, SELLIN_ZERO);
     }
 
     public final void sellInShouldDecreaseBelow0() {
-	Item agedBrie = createItem(0, 49);
+	Item agedBrie = createItem(SELLIN_ZERO, 49);
 	updateQuality(agedBrie);
-	assertEquals(agedBrie.sellIn, -1);
+	assertEquals(agedBrie.sellIn, SELLIN_NEGATIVE);
     }
 
     @Override

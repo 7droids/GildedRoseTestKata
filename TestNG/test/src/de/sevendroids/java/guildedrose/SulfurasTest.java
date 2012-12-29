@@ -5,26 +5,23 @@ import static org.testng.Assert.assertEquals;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
-import de.sevendroids.java.guildedrose.Item;
-
 @Test(groups = "Unit")
 public class SulfurasTest extends GildedRoseTest {
     public final void qualityShouldNotIncreaseOver50() {
-	int quality = 50;
-	Item sulfuras = createItem(1, quality);
+	Item sulfuras = createItem(SELLIN_POSITIVE, QUALITY_MAXIMUM);
 	updateQuality(sulfuras);
-	assertEquals(sulfuras.quality, quality);
+	assertEquals(sulfuras.quality, QUALITY_MAXIMUM);
     }
 
     public final void qualityShouldNotIncrease() {
 	int quality = 49;
-	Item sulfuras = createItem(1, quality);
+	Item sulfuras = createItem(SELLIN_POSITIVE, quality);
 	updateQuality(sulfuras);
 	assertEquals(sulfuras.quality, quality);
     }
 
     public final void qualityShouldNotDecrease() {
-	Item sulfuras = createItem(1, 1);
+	Item sulfuras = createItem(SELLIN_POSITIVE, 1);
 	updateQuality(sulfuras);
 	assertEquals(sulfuras.quality, 1);
     }
@@ -53,7 +50,7 @@ public class SulfurasTest extends GildedRoseTest {
     public final void qualityShouldNeverBeNegative() {
 	Item agedBrie = createItem(-2, 1);
 	updateQuality(agedBrie);
-	assertEquals(agedBrie.quality, 0);
+	assertEquals(agedBrie.quality, QUALITY_ZERO);
     }
 
     @Test(dataProvider = "createItems")
@@ -71,9 +68,12 @@ public class SulfurasTest extends GildedRoseTest {
      */
     @DataProvider(name = "createItems")
     protected final Item[][] createItems() {
-	return new Item[][] { { createItem(0, 0) }, { createItem(1, 0) },
-		{ createItem(0, 49) }, { createItem(1, 49) },
-		{ createItem(0, 50) }, { createItem(1, 50) },
+	return new Item[][] { { createItem(SELLIN_ZERO, QUALITY_ZERO) },
+		{ createItem(SELLIN_POSITIVE, QUALITY_ZERO) },
+		{ createItem(SELLIN_ZERO, 49) },
+		{ createItem(SELLIN_POSITIVE, 49) },
+		{ createItem(SELLIN_ZERO, QUALITY_MAXIMUM) },
+		{ createItem(SELLIN_POSITIVE, QUALITY_MAXIMUM) },
 
 	};
     }
