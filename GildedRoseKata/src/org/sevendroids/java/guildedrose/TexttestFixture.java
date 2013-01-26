@@ -1,4 +1,4 @@
-package de.sevendroids.java.guildedrose;
+package org.sevendroids.java.guildedrose;
 
 public class TexttestFixture {
     public static void main(String[] args) {

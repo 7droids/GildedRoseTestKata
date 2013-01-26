@@ -1,8 +1,10 @@
-package de.sevendroids.java.guildedrose;
+package org.sevendroids.java.guildedrose;
 
 import static org.junit.Assert.assertEquals;
 
 import org.junit.Test;
+import org.sevendroids.java.guildedrose.GildedRose;
+import org.sevendroids.java.guildedrose.Item;
 
 public class AgedBrieItemTest {
 

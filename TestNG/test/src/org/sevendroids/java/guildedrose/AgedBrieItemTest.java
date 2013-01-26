@@ -1,10 +1,11 @@
 /**
  * 
  */
-package de.sevendroids.java.guildedrose;
+package org.sevendroids.java.guildedrose;
 
 import static org.testng.Assert.assertEquals;
 
+import org.sevendroids.java.guildedrose.Item;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 

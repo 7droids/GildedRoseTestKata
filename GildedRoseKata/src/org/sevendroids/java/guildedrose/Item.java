@@ -1,4 +1,4 @@
-package de.sevendroids.java.guildedrose;
+package org.sevendroids.java.guildedrose;
 public class Item {
 
     public String name;
