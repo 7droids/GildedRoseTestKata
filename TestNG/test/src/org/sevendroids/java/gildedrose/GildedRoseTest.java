@@ -1,7 +1,7 @@
-package org.sevendroids.java.guildedrose;
+package org.sevendroids.java.gildedrose;
 
-import org.sevendroids.java.guildedrose.GildedRose;
-import org.sevendroids.java.guildedrose.Item;
+import org.sevendroids.java.gildedrose.GildedRose;
+import org.sevendroids.java.gildedrose.Item;
 
 
 public abstract class GildedRoseTest {

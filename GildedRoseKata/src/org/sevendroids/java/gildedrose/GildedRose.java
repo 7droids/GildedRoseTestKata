@@ -1,4 +1,4 @@
-package org.sevendroids.java.guildedrose;
+package org.sevendroids.java.gildedrose;
 
 public class GildedRose {
     public Item[] items;

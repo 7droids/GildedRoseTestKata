@@ -1,10 +1,10 @@
-package org.sevendroids.java.guildedrose;
+package org.sevendroids.java.gildedrose;
 
 import static org.junit.Assert.assertEquals;
 
 import org.junit.Test;
-import org.sevendroids.java.guildedrose.GildedRose;
-import org.sevendroids.java.guildedrose.Item;
+import org.sevendroids.java.gildedrose.GildedRose;
+import org.sevendroids.java.gildedrose.Item;
 
 public class NormalItemTest {
 
